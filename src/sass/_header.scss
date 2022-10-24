@@ -1,0 +1,65 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+header {
+  grid-area: header;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 0% 6.7%;
+  margin-top: 3rem;
+  h1 {
+    letter-spacing: 0.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: v.$white-clr;
+    margin: 0rem;
+  }
+  img {
+    cursor: pointer;
+    width: 1.25rem;
+  }
+  /* ----------------------- Media Queries ----------------------- */
+  @include m.flippedMobileScreens(41.25rem, 53.75rem, 26.25rem) {
+    /* --------- ($min-wdth, $max-wdth, $max-hgt) --------- */
+    padding: 0% 20%;
+    h1 {
+      letter-spacing: 0.938rem;
+      font-size: 2.5rem;
+    }
+    img {
+      width: 1.625rem;
+    }
+  }
+  @include m.padScreens(37.5rem, 63.938rem) {
+    /* ------ ($min-wdth, $max-wdth) ------ */
+    padding: 0% 20%;
+    h1 {
+      letter-spacing: 0.938rem;
+      font-size: 2.5rem;
+    }
+    img {
+      width: 1.625rem;
+    }
+  }
+  @include m.flippedPadScreens(64rem, 75rem, 37.5rem) {
+    /* ------ ($mn-wdth, $max-wdth, $mn-hgt) ------ */
+    padding: 0% 20%;
+    h1 {
+      letter-spacing: 0.938rem;
+      font-size: 2.5rem;
+    }
+    img {
+      width: 1.625rem;
+    }
+  }
+  @include m.wideScreens(31.25rem, 73.75rem) {
+    /* ------ ($min-hgt, $min-wdth) ------ */
+    padding: 0% 31.25%;
+    h1 {
+      letter-spacing: 0.938rem;
+      font-size: 2.5rem;
+    }
+    img {
+      width: 1.625rem;
+    }
+  }
+}
