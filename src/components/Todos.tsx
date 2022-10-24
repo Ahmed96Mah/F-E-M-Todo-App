@@ -18,7 +18,7 @@ const Todo = ({
     // @ts-ignore
     todoInput.current.value.length >= 10
       ? handleAddTodo(
-        // @ts-ignore
+          // @ts-ignore
           todoInput.current.value,
           // @ts-ignore
           () => (todoInput.current.value = '')
