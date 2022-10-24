@@ -18,7 +18,9 @@ const Todo = ({
     // @ts-ignore
     todoInput.current.value.length >= 10
       ? handleAddTodo(
+        // @ts-ignore
           todoInput.current.value,
+          // @ts-ignore
           () => (todoInput.current.value = '')
         )
       : alert('The Todo have to consist of at least 10 characters');
