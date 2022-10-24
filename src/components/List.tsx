@@ -15,6 +15,7 @@ const List = ({
   todos,
   filter,
   theme,
+  loading,
   handleToggleTodo,
   handleRemoveTodo,
   setFilter,
@@ -23,6 +24,7 @@ const List = ({
   todos: todo[];
   filter: string;
   theme: string;
+  loading: boolean;
   handleToggleTodo: Function;
   handleRemoveTodo: Function;
   setFilter: Function;
@@ -36,7 +38,13 @@ const List = ({
   };
   return (
     <div id="listContainer" className={theme === 'dark' ? 'dark' : ''}>
-      {todos !== undefined &&
+      {loading === true && (
+        <div className="loadingDiv">
+          <i className="fa-solid fa-spinner fa-spin-pulse"></i>
+          <span>Loading Saved Todos</span>
+        </div>
+      )}
+      {loading !== true &&
         filter === 'all' &&
         todos.map((todo, index) => {
           return (
@@ -96,7 +104,7 @@ const List = ({
           );
         })}
 
-      {todos !== undefined &&
+      {loading !== true &&
         filter !== 'all' &&
         todos
           .filter((todo) => todo.complete === completeness)
@@ -209,6 +217,7 @@ export const ConnectedList = connect(
     todos: state.todos,
     filter: state.filter,
     theme: state.theme,
+    loading: state.loading,
   }),
   {
     handleToggleTodo,
