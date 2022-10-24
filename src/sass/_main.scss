@@ -189,6 +189,18 @@ main {
     &.dark {
       background-color: v.$dm-v-dark-desaturated-blue;
     }
+    .loadingDiv {
+      padding: 3rem 0rem 2rem 0rem;
+      span {
+        font-size: 0.85rem;
+        margin-top: 2rem;
+        color: v.$bright-blue;
+      }
+      i {
+        font-size: 2.5rem;
+        color: v.$bright-blue;
+      }
+    }
   }
   /* ----------------------- Media Queries ----------------------- */
   @include m.flippedMobileScreens(41.25rem, 53.75rem, 26.25rem) {
@@ -303,6 +315,15 @@ main {
           border-radius: 0rem;
           position: inherit;
           width: auto;
+        }
+      }
+      .loadingDiv {
+        span {
+          font-size: 1.25rem;
+          margin-top: 2rem;
+        }
+        i {
+          font-size: 3rem;
         }
       }
     }
