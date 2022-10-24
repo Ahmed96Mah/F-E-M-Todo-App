@@ -4,4 +4,5 @@ export type state = {
   todos: todo[];
   filter: string;
   theme: string;
+  loading: boolean;
 };
