@@ -1,0 +1,310 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+main {
+  font-family: 'Josefin Sans', sans-serif;
+  #inputDiv {
+    background-color: v.$white-clr;
+    margin: 2.3rem 6.7% 3rem 6.7%;
+    border-radius: 0.3rem;
+    padding: 0.75rem 0rem;
+    .circleDiv {
+      cursor: pointer;
+      border-radius: 1rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      background-color: v.$white-clr;
+      border: 1px solid v.$lm-v-light-grayish-blue;
+      margin: 0rem 0.75rem 0rem 1.25rem;
+      &.dark {
+        background-color: v.$dm-v-dark-desaturated-blue;
+        border-color: v.$dm-v-dark-grayish-blue-border;
+      }
+      img {
+        &.addTodo {
+          display: none;
+        }
+      }
+    }
+    input {
+      border: none;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: -0.011rem;
+      margin-top: 0.25rem;
+      outline: none;
+      color: v.$lm-v-dark-grayish-blue;
+      &::placeholder {
+        color: v.$lm-dark-grayish-blue;
+      }
+      &.dark {
+        &::placeholder {
+          color: v.$dm-Dark-grayish-blue;
+        }
+        color: v.$dm-light-grayish-blue;
+        background-color: v.$dm-v-dark-desaturated-blue;
+      }
+    }
+    &.dark {
+      background-color: v.$dm-v-dark-desaturated-blue;
+    }
+  }
+  #listContainer {
+    background-color: v.$white-clr;
+    margin: -1.5rem 6.7% 0rem 6.7%;
+    border-radius: 0.3rem;
+    position: absolute;
+    width: 86.6%;
+    .todoItem {
+      border-bottom: 1px solid v.$lm-v-light-grayish-blue;
+      padding: 1rem 0rem;
+      font-size: 0.75rem;
+      letter-spacing: -0.011rem;
+      span {
+        &.circleDiv {
+          cursor: pointer;
+          border-radius: 1rem;
+          width: 1.25rem;
+          height: 1.25rem;
+          background-color: v.$white-clr;
+          border: 1px solid v.$lm-v-light-grayish-blue;
+          margin: 0rem 0.75rem 0rem 1.25rem;
+          img {
+            display: none;
+          }
+          &.dark {
+            background-color: v.$dm-v-dark-desaturated-blue;
+            border-color: v.$dm-v-dark-grayish-blue-border;
+          }
+        }
+        &.completedCircleDiv {
+          cursor: pointer;
+          border-radius: 1rem;
+          width: 1.25rem;
+          height: 1.25rem;
+          background-color: v.$white-clr;
+          margin: 0.063rem 0.813rem 0.063rem 1.313rem;
+          background: linear-gradient(
+            120deg,
+            hsl(192, 100%, 67%),
+            hsl(280, 87%, 65%)
+          );
+          img {
+            display: block;
+          }
+        }
+        &.todo {
+          cursor: pointer;
+          text-decoration: none;
+          color: v.$lm-v-dark-grayish-blue;
+          &.dark {
+            color: v.$dm-light-grayish-blue;
+          }
+        }
+        &.completedTodo {
+          cursor: pointer;
+          text-decoration: line-through;
+          color: hsl(234, 39%, 85%);
+          &.dark {
+            color: v.$dm-v-dark-grayish-blue;
+          }
+        }
+      }
+      img {
+        &.removeIcon {
+          cursor: pointer;
+          margin-right: 1.25rem;
+          width: 0.737rem;
+        }
+      }
+      &.dark {
+        border-color: v.$dm-v-dark-grayish-blue-border;
+      }
+    }
+    #listActions {
+      font-size: 0.75rem;
+      padding: 1rem 1.25rem;
+      #count {
+        color: v.$lm-dark-grayish-blue;
+        &.dark {
+          color: v.$dm-v-dark-grayish-blue;
+        }
+      }
+      .filters {
+        background-color: v.$white-clr;
+        margin-top: 7rem;
+        margin-left: -1.25rem;
+        padding: 0.75rem 0rem;
+        border-radius: 0.3rem;
+        position: absolute;
+        width: 100%;
+        span {
+          cursor: pointer;
+          font-size: 0.875rem;
+          color: v.$lm-dark-grayish-blue;
+          font-weight: 700;
+          &.selected {
+            color: v.$bright-blue;
+          }
+          &:hover {
+            color: v.$lm-v-dark-grayish-blue;
+            &.selected {
+              color: v.$bright-blue;
+            }
+          }
+        }
+        :nth-child(2) {
+          margin: 0rem 1.25rem;
+        }
+        &.dark {
+          background-color: v.$dm-v-dark-desaturated-blue;
+          span {
+            color: v.$dm-v-dark-grayish-blue;
+            &.selected {
+              color: v.$bright-blue;
+            }
+            &:hover {
+              color: v.$dm-light-grayish-blue;
+              &.selected {
+                color: v.$bright-blue;
+              }
+            }
+          }
+        }
+      }
+      #clearList {
+        cursor: pointer;
+        color: v.$lm-dark-grayish-blue;
+        &.dark {
+          color: v.$dm-v-dark-grayish-blue;
+          &:hover {
+            color: v.$dm-light-grayish-blue;
+          }
+        }
+        &:hover {
+          color: v.$lm-v-dark-grayish-blue;
+        }
+      }
+    }
+    &.dark {
+      background-color: v.$dm-v-dark-desaturated-blue;
+    }
+  }
+  /* ----------------------- Media Queries ----------------------- */
+  @include m.flippedMobileScreens(41.25rem, 53.75rem, 26.25rem) {
+    /* --------- ($min-wdth, $max-wdth, $max-hgt) --------- */
+  }
+  @include m.padScreens(37.5rem, 63.938rem) {
+    /* ------ ($min-wdth, $max-wdth) ------ */
+    #inputDiv {
+      margin: 2.3rem auto 3rem auto;
+      width: 60%;
+      input {
+        font-size: 1.125rem;
+      }
+    }
+    #listContainer {
+      margin: -1.5rem 20% 0rem 20%;
+      width: 60%;
+      .todoItem {
+        font-size: 1.125rem;
+      }
+    }
+  }
+  @include m.flippedPadScreens(64rem, 75rem, 37.5rem) {
+    /* ------ ($mn-wdth, $max-wdth, $mn-hgt) ------ */
+    #inputDiv {
+      margin: 2.3rem auto 3rem auto;
+      width: 60%;
+      input {
+        font-size: 1.125rem;
+      }
+    }
+    #listContainer {
+      margin: -1.5rem 20% 0rem 20%;
+      width: 60%;
+      .todoItem {
+        font-size: 1.125rem;
+      }
+    }
+  }
+  @include m.wideScreens(31.25rem, 73.75rem) {
+    /* ------ ($min-hgt, $min-wdth) ------ */
+    #inputDiv {
+      margin: 2.3rem auto 3rem auto;
+      width: 37.5%;
+      input {
+        font-size: 1.125rem;
+      }
+      .circleDiv {
+        &:hover {
+          img {
+            &.addTodo {
+              display: block;
+              filter: brightness(0) saturate(100%) invert(38%) sepia(77%)
+                saturate(1874%) hue-rotate(207deg) brightness(99%)
+                contrast(102%);
+            }
+          }
+        }
+      }
+    }
+    #listContainer {
+      margin: -1.5rem 31.25% 0rem 31.25%;
+      width: 37.5%;
+      .todoItem {
+        font-size: 1.125rem;
+        span {
+          &.borderCircle {
+            cursor: pointer;
+            margin: 0rem 0.75rem 0rem 1.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 100%;
+            :nth-child(1) {
+              margin: 0rem;
+              &:hover {
+                border-color: transparent;
+              }
+            }
+            &:hover {
+              &:has(.circleDiv) {
+                background: linear-gradient(
+                  120deg,
+                  hsl(192, 100%, 67%),
+                  hsl(280, 87%, 65%)
+                );
+              }
+              :nth-child(1) {
+                border-color: transparent;
+              }
+            }
+          }
+        }
+        img {
+          &.removeIcon {
+            display: none;
+          }
+        }
+        &:hover {
+          img {
+            &.removeIcon {
+              display: block;
+            }
+          }
+        }
+      }
+      #listActions {
+        .filters {
+          background-color: v.$white-clr;
+          margin-top: 0rem;
+          margin-left: 0rem;
+          padding: 0rem;
+          border-radius: 0rem;
+          position: inherit;
+          width: auto;
+        }
+      }
+    }
+  }
+}
