@@ -1,0 +1,39 @@
+@use 'mixins' as m;
+
+body {
+  @include m.displayGrid(3, 1fr, 'header' 'main' 'footer');
+  header {
+    @include m.displayFlex(row, nowrap, space-between, center);
+  }
+  main {
+    div {
+      &#inputDiv {
+        @include m.displayFlex(row, nowrap, flex-start, center);
+        .circleDiv {
+          @include m.displayFlex(row, nowrap, center, center);
+        }
+      }
+      &#listContainer {
+        .todoItem {
+          @include m.displayFlex(row, nowrap, space-between, center);
+          .todoData {
+            @include m.displayFlex(row, nowrap, space-between, center);
+          }
+          .circleDiv,
+          .completedCircleDiv {
+            @include m.displayFlex(row, nowrap, center, center);
+          }
+          .borderCircle {
+            @include m.displayFlex(row, nowrap, center, center);
+          }
+        }
+        #listActions {
+          @include m.displayFlex(row, nowrap, space-between, center);
+          .filters {
+            @include m.displayFlex(row, nowrap, center, center);
+          }
+        }
+      }
+    }
+  }
+}
