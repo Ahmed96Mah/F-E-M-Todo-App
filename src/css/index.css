@@ -24,6 +24,12 @@ body main div#inputDiv .circleDiv {
   justify-content: center;
   align-items: center;
 }
+body main div#listContainer .loadingDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
 body main div#listContainer .todoItem {
   display: flex;
   flex-flow: row nowrap;
@@ -320,6 +326,18 @@ main #listContainer #listActions #clearList:hover {
 main #listContainer.dark {
   background-color: hsl(235deg, 24%, 19%);
 }
+main #listContainer .loadingDiv {
+  padding: 3rem 0rem 2rem 0rem;
+}
+main #listContainer .loadingDiv span {
+  font-size: 0.85rem;
+  margin-top: 2rem;
+  color: hsl(220deg, 98%, 61%);
+}
+main #listContainer .loadingDiv i {
+  font-size: 2.5rem;
+  color: hsl(220deg, 98%, 61%);
+}
 @media only screen and (min-width: 41.25rem) and (max-width: 53.75rem) and (max-height: 26.25rem) {
   main {
     /* --------- ($min-wdth, $max-wdth, $max-hgt) --------- */
@@ -423,6 +441,13 @@ main #listContainer.dark {
     border-radius: 0rem;
     position: inherit;
     width: auto;
+  }
+  main #listContainer .loadingDiv span {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+  main #listContainer .loadingDiv i {
+    font-size: 3rem;
   }
 }
 
