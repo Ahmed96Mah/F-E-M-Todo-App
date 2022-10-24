@@ -1,0 +1,57 @@
+@use 'layout';
+@use 'header';
+@use 'main';
+@use 'variables' as v;
+@use 'mixins' as m;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+//font-family: 'Josefin Sans', sans-serif;
+
+body {
+  margin: 0;
+  background: center / cover no-repeat url('../assets/bg-mobile-light.jpg'),
+    v.$v-light-gray;
+  &.dark {
+    background: center / cover no-repeat url('../assets/bg-mobile-dark.jpg'),
+      v.$v-dark-blue;
+  }
+
+  /* ----------------------- Media Queries ----------------------- */
+  @include m.flippedMobileScreens(41.25rem, 53.75rem, 26.25rem) {
+    /* --------- ($min-wdth, $max-wdth, $max-hgt) --------- */
+    background: center / cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      v.$v-light-gray;
+    &.dark {
+      background: center / cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+        v.$v-dark-blue;
+    }
+  }
+  @include m.padScreens(37.5rem, 63.938rem) {
+    /* ------ ($min-wdth, $max-wdth) ------ */
+    background: center / cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      v.$v-light-gray;
+    &.dark {
+      background: center / cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+        v.$v-dark-blue;
+    }
+  }
+  @include m.flippedPadScreens(64rem, 75rem, 37.5rem) {
+    /* ------ ($mn-wdth, $max-wdth, $mn-hgt) ------ */
+    background: center / cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      v.$v-light-gray;
+    &.dark {
+      background: center / cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+        v.$v-dark-blue;
+    }
+  }
+  @include m.wideScreens(31.25rem, 73.75rem) {
+    /* ------ ($min-hgt, $min-wdth) ------ */
+    background: center / cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      v.$v-light-gray;
+    &.dark {
+      background: center / cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+        v.$v-dark-blue;
+    }
+  }
+}
