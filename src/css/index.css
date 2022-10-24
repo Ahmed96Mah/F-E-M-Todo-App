@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+/* Media Queries */
+body {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr;
+  grid-template-areas: 'header' 'main' 'footer';
+}
+body header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main div#inputDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main div#inputDiv .circleDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body main div#listContainer .todoItem {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main div#listContainer .todoItem .todoData {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main div#listContainer .todoItem .circleDiv,
+body main div#listContainer .todoItem .completedCircleDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body main div#listContainer .todoItem .borderCircle {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body main div#listContainer #listActions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main div#listContainer #listActions .filters {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- Light Theme Colors ----- */
+/* ----- Dark Theme Colors ----- */
+header {
+  grid-area: header;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 0% 6.7%;
+  margin-top: 3rem;
+  /* ----------------------- Media Queries ----------------------- */
+}
+header h1 {
+  letter-spacing: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  margin: 0rem;
+}
+header img {
+  cursor: pointer;
+  width: 1.25rem;
+}
+@media only screen and (min-width: 41.25rem) and (max-width: 53.75rem) and (max-height: 26.25rem) {
+  header {
+    /* --------- ($min-wdth, $max-wdth, $max-hgt) --------- */
+    padding: 0% 20%;
+  }
+  header h1 {
+    letter-spacing: 0.938rem;
+    font-size: 2.5rem;
+  }
+  header img {
+    width: 1.625rem;
+  }
+}
+@media only screen and (min-width: 37.5rem) and (max-width: 63.938rem) {
+  header {
+    /* ------ ($min-wdth, $max-wdth) ------ */
+    padding: 0% 20%;
+  }
+  header h1 {
+    letter-spacing: 0.938rem;
+    font-size: 2.5rem;
+  }
+  header img {
+    width: 1.625rem;
+  }
+}
+@media only screen and (min-width: 64rem) and (max-width: 75rem) and (min-height: 37.5rem) {
+  header {
+    /* ------ ($mn-wdth, $max-wdth, $mn-hgt) ------ */
+    padding: 0% 20%;
+  }
+  header h1 {
+    letter-spacing: 0.938rem;
+    font-size: 2.5rem;
+  }
+  header img {
+    width: 1.625rem;
+  }
+}
+@media only screen and (min-height: 31.25rem) and (min-width: 73.75rem) {
+  header {
+    /* ------ ($min-hgt, $min-wdth) ------ */
+    padding: 0% 31.25%;
+  }
+  header h1 {
+    letter-spacing: 0.938rem;
+    font-size: 2.5rem;
+  }
+  header img {
+    width: 1.625rem;
+  }
+}
+
+main {
+  font-family: 'Josefin Sans', sans-serif;
+  /* ----------------------- Media Queries ----------------------- */
+}
+main #inputDiv {
+  background-color: white;
+  margin: 2.3rem 6.7% 3rem 6.7%;
+  border-radius: 0.3rem;
+  padding: 0.75rem 0rem;
+}
+main #inputDiv .circleDiv {
+  cursor: pointer;
+  border-radius: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: white;
+  border: 1px solid hsl(236deg, 33%, 92%);
+  margin: 0rem 0.75rem 0rem 1.25rem;
+}
+main #inputDiv .circleDiv.dark {
+  background-color: hsl(235deg, 24%, 19%);
+  border-color: hsl(237deg, 14%, 26%);
+}
+main #inputDiv .circleDiv img.addTodo {
+  display: none;
+}
+main #inputDiv input {
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: -0.011rem;
+  margin-top: 0.25rem;
+  outline: none;
+  color: hsl(235deg, 19%, 35%);
+}
+main #inputDiv input::placeholder {
+  color: hsl(236deg, 9%, 61%);
+}
+main #inputDiv input.dark {
+  color: hsl(234deg, 39%, 85%);
+  background-color: hsl(235deg, 24%, 19%);
+}
+main #inputDiv input.dark::placeholder {
+  color: hsl(234deg, 11%, 52%);
+}
+main #inputDiv.dark {
+  background-color: hsl(235deg, 24%, 19%);
+}
+main #listContainer {
+  background-color: white;
+  margin: -1.5rem 6.7% 0rem 6.7%;
+  border-radius: 0.3rem;
+  position: absolute;
+  width: 86.6%;
+}
+main #listContainer .todoItem {
+  border-bottom: 1px solid hsl(236deg, 33%, 92%);
+  padding: 1rem 0rem;
+  font-size: 0.75rem;
+  letter-spacing: -0.011rem;
+}
+main #listContainer .todoItem span.circleDiv {
+  cursor: pointer;
+  border-radius: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: white;
+  border: 1px solid hsl(236deg, 33%, 92%);
+  margin: 0rem 0.75rem 0rem 1.25rem;
+}
+main #listContainer .todoItem span.circleDiv img {
+  display: none;
+}
+main #listContainer .todoItem span.circleDiv.dark {
+  background-color: hsl(235deg, 24%, 19%);
+  border-color: hsl(237deg, 14%, 26%);
+}
+main #listContainer .todoItem span.completedCircleDiv {
+  cursor: pointer;
+  border-radius: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: white;
+  margin: 0.063rem 0.813rem 0.063rem 1.313rem;
+  background: linear-gradient(
+    120deg,
+    hsl(192deg, 100%, 67%),
+    hsl(280deg, 87%, 65%)
+  );
+}
+main #listContainer .todoItem span.completedCircleDiv img {
+  display: block;
+}
+main #listContainer .todoItem span.todo {
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(235deg, 19%, 35%);
+}
+main #listContainer .todoItem span.todo.dark {
+  color: hsl(234deg, 39%, 85%);
+}
+main #listContainer .todoItem span.completedTodo {
+  cursor: pointer;
+  text-decoration: line-through;
+  color: hsl(234deg, 39%, 85%);
+}
+main #listContainer .todoItem span.completedTodo.dark {
+  color: hsl(233deg, 14%, 35%);
+}
+main #listContainer .todoItem img.removeIcon {
+  cursor: pointer;
+  margin-right: 1.25rem;
+  width: 0.737rem;
+}
+main #listContainer .todoItem.dark {
+  border-color: hsl(237deg, 14%, 26%);
+}
+main #listContainer #listActions {
+  font-size: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+main #listContainer #listActions #count {
+  color: hsl(236deg, 9%, 61%);
+}
+main #listContainer #listActions #count.dark {
+  color: hsl(233deg, 14%, 35%);
+}
+main #listContainer #listActions .filters {
+  background-color: white;
+  margin-top: 7rem;
+  margin-left: -1.25rem;
+  padding: 0.75rem 0rem;
+  border-radius: 0.3rem;
+  position: absolute;
+  width: 100%;
+}
+main #listContainer #listActions .filters span {
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: hsl(236deg, 9%, 61%);
+  font-weight: 700;
+}
+main #listContainer #listActions .filters span.selected {
+  color: hsl(220deg, 98%, 61%);
+}
+main #listContainer #listActions .filters span:hover {
+  color: hsl(235deg, 19%, 35%);
+}
+main #listContainer #listActions .filters span:hover.selected {
+  color: hsl(220deg, 98%, 61%);
+}
+main #listContainer #listActions .filters :nth-child(2) {
+  margin: 0rem 1.25rem;
+}
+main #listContainer #listActions .filters.dark {
+  background-color: hsl(235deg, 24%, 19%);
+}
+main #listContainer #listActions .filters.dark span {
+  color: hsl(233deg, 14%, 35%);
+}
+main #listContainer #listActions .filters.dark span.selected {
+  color: hsl(220deg, 98%, 61%);
+}
+main #listContainer #listActions .filters.dark span:hover {
+  color: hsl(234deg, 39%, 85%);
+}
+main #listContainer #listActions .filters.dark span:hover.selected {
+  color: hsl(220deg, 98%, 61%);
+}
+main #listContainer #listActions #clearList {
+  cursor: pointer;
+  color: hsl(236deg, 9%, 61%);
+}
+main #listContainer #listActions #clearList.dark {
+  color: hsl(233deg, 14%, 35%);
+}
+main #listContainer #listActions #clearList.dark:hover {
+  color: hsl(234deg, 39%, 85%);
+}
+main #listContainer #listActions #clearList:hover {
+  color: hsl(235deg, 19%, 35%);
+}
+main #listContainer.dark {
+  background-color: hsl(235deg, 24%, 19%);
+}
+@media only screen and (min-width: 41.25rem) and (max-width: 53.75rem) and (max-height: 26.25rem) {
+  main {
+    /* --------- ($min-wdth, $max-wdth, $max-hgt) --------- */
+  }
+}
+@media only screen and (min-width: 37.5rem) and (max-width: 63.938rem) {
+  main {
+    /* ------ ($min-wdth, $max-wdth) ------ */
+  }
+  main #inputDiv {
+    margin: 2.3rem auto 3rem auto;
+    width: 60%;
+  }
+  main #inputDiv input {
+    font-size: 1.125rem;
+  }
+  main #listContainer {
+    margin: -1.5rem 20% 0rem 20%;
+    width: 60%;
+  }
+  main #listContainer .todoItem {
+    font-size: 1.125rem;
+  }
+}
+@media only screen and (min-width: 64rem) and (max-width: 75rem) and (min-height: 37.5rem) {
+  main {
+    /* ------ ($mn-wdth, $max-wdth, $mn-hgt) ------ */
+  }
+  main #inputDiv {
+    margin: 2.3rem auto 3rem auto;
+    width: 60%;
+  }
+  main #inputDiv input {
+    font-size: 1.125rem;
+  }
+  main #listContainer {
+    margin: -1.5rem 20% 0rem 20%;
+    width: 60%;
+  }
+  main #listContainer .todoItem {
+    font-size: 1.125rem;
+  }
+}
+@media only screen and (min-height: 31.25rem) and (min-width: 73.75rem) {
+  main {
+    /* ------ ($min-hgt, $min-wdth) ------ */
+  }
+  main #inputDiv {
+    margin: 2.3rem auto 3rem auto;
+    width: 37.5%;
+  }
+  main #inputDiv input {
+    font-size: 1.125rem;
+  }
+  main #inputDiv .circleDiv:hover img.addTodo {
+    display: block;
+    filter: brightness(0) saturate(100%) invert(38%) sepia(77%) saturate(1874%)
+      hue-rotate(207deg) brightness(99%) contrast(102%);
+  }
+  main #listContainer {
+    margin: -1.5rem 31.25% 0rem 31.25%;
+    width: 37.5%;
+  }
+  main #listContainer .todoItem {
+    font-size: 1.125rem;
+  }
+  main #listContainer .todoItem span.borderCircle {
+    cursor: pointer;
+    margin: 0rem 0.75rem 0rem 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+  }
+  main #listContainer .todoItem span.borderCircle :nth-child(1) {
+    margin: 0rem;
+  }
+  main #listContainer .todoItem span.borderCircle :nth-child(1):hover {
+    border-color: transparent;
+  }
+  main #listContainer .todoItem span.borderCircle:hover:has(.circleDiv) {
+    background: linear-gradient(
+      120deg,
+      hsl(192deg, 100%, 67%),
+      hsl(280deg, 87%, 65%)
+    );
+  }
+  main #listContainer .todoItem span.borderCircle:hover :nth-child(1) {
+    border-color: transparent;
+  }
+  main #listContainer .todoItem img.removeIcon {
+    display: none;
+  }
+  main #listContainer .todoItem:hover img.removeIcon {
+    display: block;
+  }
+  main #listContainer #listActions .filters {
+    background-color: white;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    padding: 0rem;
+    border-radius: 0rem;
+    position: inherit;
+    width: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: center/cover no-repeat url('../assets/bg-mobile-light.jpg'),
+    hsl(0deg, 0%, 98%);
+  /* ----------------------- Media Queries ----------------------- */
+}
+body.dark {
+  background: center/cover no-repeat url('../assets/bg-mobile-dark.jpg'),
+    hsl(235deg, 21%, 11%);
+}
+@media only screen and (min-width: 41.25rem) and (max-width: 53.75rem) and (max-height: 26.25rem) {
+  body {
+    /* --------- ($min-wdth, $max-wdth, $max-hgt) --------- */
+    background: center/cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      hsl(0deg, 0%, 98%);
+  }
+  body.dark {
+    background: center/cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+      hsl(235deg, 21%, 11%);
+  }
+}
+@media only screen and (min-width: 37.5rem) and (max-width: 63.938rem) {
+  body {
+    /* ------ ($min-wdth, $max-wdth) ------ */
+    background: center/cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      hsl(0deg, 0%, 98%);
+  }
+  body.dark {
+    background: center/cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+      hsl(235deg, 21%, 11%);
+  }
+}
+@media only screen and (min-width: 64rem) and (max-width: 75rem) and (min-height: 37.5rem) {
+  body {
+    /* ------ ($mn-wdth, $max-wdth, $mn-hgt) ------ */
+    background: center/cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      hsl(0deg, 0%, 98%);
+  }
+  body.dark {
+    background: center/cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+      hsl(235deg, 21%, 11%);
+  }
+}
+@media only screen and (min-height: 31.25rem) and (min-width: 73.75rem) {
+  body {
+    /* ------ ($min-hgt, $min-wdth) ------ */
+    background: center/cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      hsl(0deg, 0%, 98%);
+  }
+  body.dark {
+    background: center/cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+      hsl(235deg, 21%, 11%);
+  }
+}
