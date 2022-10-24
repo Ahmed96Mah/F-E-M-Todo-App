@@ -1,0 +1,12 @@
+# Ignore node_modules folder
+node_modules
+
+# Ignore .json files
+*.json
+
+# Ignore images folder
+images
+
+# Ignore all design files
+*.sketch
+*.fig
