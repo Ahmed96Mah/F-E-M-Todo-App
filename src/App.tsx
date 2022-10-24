@@ -30,7 +30,7 @@ function App({
 
   useEffect(() => {
     handleReceiveData();
-  }, []);
+  }, [handleReceiveData]);
 
   return (
     <div className="App">
