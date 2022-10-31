@@ -486,3 +486,14 @@ body.dark {
     background: center/cover no-repeat url("../assets/bg-desktop-dark.jpg"), hsl(235deg, 21%, 11%);
   }
 }
+@media (prefers-color-scheme: light) {
+  body {
+    background: center/cover no-repeat url("../assets/bg-desktop-light.jpg"), hsl(0deg, 0%, 98%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body:has(.dark) {
+    /* Only take into account the browser's dark scheme preference if the body element has a class .dark */
+    background: center/cover no-repeat url("../assets/bg-desktop-dark.jpg"), hsl(235deg, 21%, 11%);
+  }
+}
