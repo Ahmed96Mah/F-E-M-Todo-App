@@ -37,13 +37,13 @@
   }
 }
 
-@mixin lightScheme () {
+@mixin lightScheme() {
   @media (prefers-color-scheme: light) {
     @content;
   }
 }
 
-@mixin darkScheme () {
+@mixin darkScheme() {
   @media (prefers-color-scheme: dark) {
     @content;
   }

@@ -198,7 +198,8 @@ main {
       }
       svg {
         width: 3.5rem;
-        filter: brightness(0) saturate(100%) invert(37%) sepia(95%) saturate(1560%) hue-rotate(207deg) brightness(97%) contrast(105%);;
+        filter: brightness(0) saturate(100%) invert(37%) sepia(95%)
+          saturate(1560%) hue-rotate(207deg) brightness(97%) contrast(105%);
       }
     }
   }

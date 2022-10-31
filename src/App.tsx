@@ -24,17 +24,25 @@ function App({
         break;
       default:
         setTheme('light');
-        document.body.classList.contains('dark') && document.body.classList.toggle('dark');
+        document.body.classList.contains('dark') &&
+          document.body.classList.toggle('dark');
     }
   };
 
   useEffect(() => {
-    ((window.matchMedia) && window.matchMedia('(prefers-color-scheme: dark)').matches && setTheme('dark'));
-    ((window.matchMedia) && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      const requiredScheme = e.matches? 'dark': 'light';
-      setTheme(requiredScheme);
-      (requiredScheme === 'light') && document.body.classList.contains('dark') && document.body.classList.toggle('dark');
-    }));
+    window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      setTheme('dark');
+    window.matchMedia &&
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', (e) => {
+          const requiredScheme = e.matches ? 'dark' : 'light';
+          setTheme(requiredScheme);
+          requiredScheme === 'light' &&
+            document.body.classList.contains('dark') &&
+            document.body.classList.toggle('dark');
+        });
     handleReceiveData();
   }, [handleReceiveData, setTheme]);
 
@@ -44,7 +52,9 @@ function App({
         <h1>TODO</h1>
         <img
           src={theme !== 'dark' ? darkModeIcon : lightModeIcon}
-          alt={theme !== 'dark' ? "Change to Dark Mode" : "Change to Light Mode"}
+          alt={
+            theme !== 'dark' ? 'Change to Dark Mode' : 'Change to Light Mode'
+          }
           onClick={processClick}
         />
       </header>
