@@ -54,4 +54,16 @@ body {
         v.$v-dark-blue;
     }
   }
+
+  @include m.lightScheme {
+    background: center / cover no-repeat url('../assets/bg-desktop-light.jpg'),
+      v.$v-light-gray;
+  }
+  @include m.darkScheme {
+    &:has(.dark) {
+      /* Only take into account the browser's dark scheme preference if the body element has a class .dark */
+      background: center / cover no-repeat url('../assets/bg-desktop-dark.jpg'),
+      v.$v-dark-blue;
+    }
+  }
 }
